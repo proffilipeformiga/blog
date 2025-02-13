@@ -3,6 +3,7 @@ title: "Prof. Filipe Formiga"
 description: |
   Prof. Filipe Formiga
 output_dir: "docs"
+theme: tema-principal.css
 navbar:
   right:
     - text: "Home"
