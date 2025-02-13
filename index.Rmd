@@ -1,15 +1,15 @@
 ---
 title: "Prof. Filipe Formiga"
-image: "frank.jpg"
+image: "imagens/profff.jpg"
 links:
-  - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
-  - label: GitHub
-    url: "https://github.com/"
-  - label: Email
-    url: "mailto:email@email.com"
+  - label: '<i class="fab fa-linkedin"></i> LinkedIn'
+    url: 'https://linkedin.com/ target = "_blank"'
+  - label: '<i class="fab fa-github"></i> GitHub'
+    url: 'https://github.com/proffilipeformiga target = "_blank"'
+  - label: '<i class="fas fa-envelope"></i> Email'
+    url: 'mailto:prof.filipeformiga@gmail.com target = "_blank"'
+  - label: '<i class="fa-brands fa-youtube"></i> Youtube'
+    url: 'https://www.youtube.com/Prof.FilipeFormiga target = "_blank"'
 output:
   postcards::trestles
 site: distill::distill_website
@@ -17,25 +17,22 @@ site: distill::distill_website
  
 ## Bio
 
-Frank Hermosillo studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+-
 
-## Education
+## Formação
 
-**Massachusetts Institute of Technology** | Cambridge, MA
+**Universidade Federal do Piauí** | Teresina-PI
 
-Ph.D. in Computer Science | September 2009 - May 2014
+Graduação em Estatística | 2009 - 2013
 
-**The University of California, Berkeley** | Berkeley, CA
+**Universidade Federal de Viçosa** | Viçosa-MG
 
-B.S. in Computer Science | September 2005 - May 2009
+Mestrado em Estatística Aplicada e Biometria | 2013 - 2015
 
-## Experience
+Doutorado em Estatística Aplicada e Biometria | 2015 - 2018
 
-**Google Brain** | Principal Investigator | January 2018 - Present
+Pós-Doutorado em Estatística Aplicada e Biometria | 2022 - 2023
 
-**Netflix** | Research Scientist | June 2014 - December 2017
+## Experiência
+
+**Universidade Federal do Piauí** | Professor Adjunto | 2016 - Presente
