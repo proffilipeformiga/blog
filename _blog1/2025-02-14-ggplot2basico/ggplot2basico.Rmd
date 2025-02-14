@@ -1,0 +1,17 @@
+---
+title: "Iniciando os trabalhos com o ggplot2"
+description: |
+  Um guia inicial para aprendizado do melhor pacote gráfico que existe.
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+# O que é *ggplot2*?
+
+O `ggplot2` é um pacote criado na liguagem R que tem como objetivo criar, editar e modificar gráficos de alta qualidade, facilitando a interpretação de resultados de coletas de dados e extração de *insights* acerca dos dados.
+
+```{r scatterplot1}
+library(tidyverse)
+ggplot(mtcars, aes(x = mpg, y = hp)) + geom_point()
+```

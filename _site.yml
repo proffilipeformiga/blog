@@ -8,8 +8,12 @@ navbar:
   right:
     - text: "Início"
       href: index.html
+    - text: "Blog"
+      href: blogp.html
     - text: "Conteúdo"
-      href: conteudo.html
-    - text: "Sobre"
-      href: about.html
+      menu:
+        - text: "Estatística"
+          href: conteudo.html 
+        - text: "R"
+          href: conteudo2.html           
 output: distill::distill_article

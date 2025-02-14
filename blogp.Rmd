@@ -1,0 +1,7 @@
+---
+title: "Blog posts"
+listings: blog1
+#output:
+#  distill::distill_article:
+#    self_contained: false
+---

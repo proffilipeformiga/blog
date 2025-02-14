@@ -1,0 +1,34 @@
+---
+title: "Prof. Filipe Formiga"
+image: "imagens/profff.jpg"
+links:
+  - label: '<i class="fab fa-linkedin"></i> LinkedIn'
+    url: 'https://linkedin.com/ target = "_blank"'
+  - label: '<i class="fab fa-github"></i> GitHub'
+    url: 'https://github.com/proffilipeformiga target = "_blank"'
+  - label: '<i class="fas fa-envelope"></i> Email'
+    url: 'mailto:prof.filipeformiga@gmail.com target = "_blank"'
+  - label: '<i class="fa-brands fa-youtube"></i> Youtube'
+    url: 'https://www.youtube.com/Prof.FilipeFormiga target = "_blank"'
+output:
+  postcards::trestles
+site: distill::distill_website
+---
+ 
+## Bio
+
+-
+
+## Formação
+
+- Graduação em **Bacharelado em Estatística** - Universidade Federal do Piauí | 2009 - 2013
+
+- Mestrado em **Estatística Aplicada e Biometria** | 2013 - 2015
+
+- Doutorado em **Estatística Aplicada e Biometria** | 2015 - 2018
+
+- Pós-Doutorado em **Estatística Aplicada e Biometria** | 2022 - 2023
+
+## Experiência
+
+- Professor Adjunto da **Universidade Federal do Piauí** | 2016 - Presente

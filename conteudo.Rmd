@@ -25,6 +25,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Introdução à conceitos importantes como o que é uma série temporal, como ela pode ser estudada e interpretada, autocorrelações, defasagem e processos estocásticos.
 
-## Tendência e Sazonalidade Determinísticas
+## Tendência e Sazonalidade
 
 Diferentes formas de estimar a tendência e a sazonalidade determinísticas de uma série temporal. Testes de hipóteses também podem ser realizados para verificar a existência desses componentes.

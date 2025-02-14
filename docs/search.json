@@ -1,14 +1,36 @@
 {
   "articles": [
     {
-      "path": "conteudo.html",
-      "title": "Conteúdos",
-      "description": "Descrição dos conteúdos abordados, bem como tutoriais em R.\n",
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2025-02-14T15:19:39-03:00"
+    },
+    {
+      "path": "blogp.html",
+      "title": "Blog posts",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2025-02-14T15:25:34-03:00"
+    },
+    {
+      "path": "conteudo2.html",
+      "title": "Tutoriais em R (em construção)",
+      "description": "Pendente.\n",
       "author": [],
       "date": "`r Sys.Date()`",
-      "contents": "\r\n\r\nContents\r\nSéries Temporais\r\nIntrodução às Séries Temporais\r\nTendência e Sazonalidade Determinísticas\r\n\r\n\r\nSéries Temporais\r\nIntrodução às Séries Temporais\r\nIntrodução à conceitos importantes como o que é uma série temporal, como ela pode ser estudada e interpretada, autocorrelações, defasagem e processos estocásticos.\r\nTendência e Sazonalidade Determinísticas\r\nDiferentes formas de estimar a tendência e a sazonalidade determinísticas de uma série temporal. Testes de hipóteses também podem ser realizados para verificar a existência desses componentes.\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-02-14T09:56:01-03:00"
+      "contents": "\r\nPrimeiros passos\r\ndplyr\r\nggplot2\r\n\r\n\r\n\r\n",
+      "last_modified": "2025-02-14T15:20:04-03:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Prof. Filipe Formiga",
+      "author": [],
+      "contents": "\r\n\r\n          \r\n          \r\n          Prof. Filipe Formiga\r\n          \r\n          \r\n          Início\r\n          Blog\r\n          \r\n          \r\n          Conteúdo\r\n           \r\n          ▾\r\n          \r\n          \r\n          Estatística\r\n          R\r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Prof. Filipe Formiga\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                         LinkedIn\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Email\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Youtube\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            \r\n            Bio\r\n            \r\n            \r\n            \r\n            Formação\r\n            Graduação em Bacharelado em\r\n            Estatística - Universidade Federal do Piauí | 2009\r\n            - 2013\r\n            Mestrado em Estatística Aplicada e\r\n            Biometria | 2013 - 2015\r\n            Doutorado em Estatística Aplicada e\r\n            Biometria | 2015 - 2018\r\n            Pós-Doutorado em Estatística Aplicada e\r\n            Biometria | 2022 - 2023\r\n            \r\n            \r\n            Experiência\r\n            Professor Adjunto da Universidade Federal do\r\n            Piauí | 2016 - Presente\r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Prof. Filipe Formiga\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                       LinkedIn\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Email\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Youtube\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              \r\n              Bio\r\n              \r\n              \r\n              \r\n              Formação\r\n              Graduação em Bacharelado em\r\n              Estatística - Universidade Federal do Piauí |\r\n              2009 - 2013\r\n              Mestrado em Estatística Aplicada e\r\n              Biometria | 2013 - 2015\r\n              Doutorado em Estatística Aplicada e\r\n              Biometria | 2015 - 2018\r\n              Pós-Doutorado em Estatística Aplicada e\r\n              Biometria | 2022 - 2023\r\n              \r\n              \r\n              Experiência\r\n              Professor Adjunto da Universidade Federal do\r\n              Piauí | 2016 - Presente\r\n              \r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
+      "last_modified": "2025-02-14T15:20:29-03:00"
     }
   ],
-  "collections": []
+  "collections": ["blog1/blog1.json"]
 }
