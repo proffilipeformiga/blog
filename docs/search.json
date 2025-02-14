@@ -1,19 +1,13 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "path": "conteudo.html",
+      "title": "Conteúdos",
+      "description": "Descrição dos conteúdos abordados, bem como tutoriais em R.\n",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-02-13T20:54:53-03:00"
-    },
-    {
-      "path": "index.html",
-      "title": "Prof. Filipe Formiga",
-      "author": [],
-      "contents": "\r\n\r\n          \r\n          \r\n          Prof. Filipe Formiga\r\n          \r\n          \r\n          Home\r\n          About\r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Prof. Filipe Formiga\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                         LinkedIn\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Email\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Youtube\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            \r\n            Bio\r\n            \r\n            \r\n            \r\n            Formação\r\n            Universidade Federal do Piauí |\r\n            Teresina-PI\r\n            Graduação em Estatística | 2009 - 2013\r\n            Universidade Federal de Viçosa |\r\n            Viçosa-MG\r\n            Mestrado em Estatística Aplicada e Biometria | 2013 -\r\n            2015\r\n            Doutorado em Estatística Aplicada e Biometria | 2015 -\r\n            2018\r\n            Pós-Doutorado em Estatística Aplicada e Biometria | 2022\r\n            - 2023\r\n            \r\n            \r\n            Experiência\r\n            Universidade Federal do Piauí |\r\n            Professor Adjunto | 2016 - Presente\r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Prof. Filipe Formiga\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                       LinkedIn\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Email\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Youtube\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              \r\n              Bio\r\n              \r\n              \r\n              \r\n              Formação\r\n              Universidade Federal do Piauí |\r\n              Teresina-PI\r\n              Graduação em Estatística | 2009 - 2013\r\n              Universidade Federal de Viçosa |\r\n              Viçosa-MG\r\n              Mestrado em Estatística Aplicada e Biometria | 2013 -\r\n              2015\r\n              Doutorado em Estatística Aplicada e Biometria | 2015 -\r\n              2018\r\n              Pós-Doutorado em Estatística Aplicada e Biometria |\r\n              2022 - 2023\r\n              \r\n              \r\n              Experiência\r\n              Universidade Federal do Piauí |\r\n              Professor Adjunto | 2016 - Presente\r\n              \r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
-      "last_modified": "2025-02-13T20:57:34-03:00"
+      "date": "`r Sys.Date()`",
+      "contents": "\r\n\r\nContents\r\nSéries Temporais\r\nIntrodução às Séries Temporais\r\nTendência e Sazonalidade Determinísticas\r\n\r\n\r\nSéries Temporais\r\nIntrodução às Séries Temporais\r\nIntrodução à conceitos importantes como o que é uma série temporal, como ela pode ser estudada e interpretada, autocorrelações, defasagem e processos estocásticos.\r\nTendência e Sazonalidade Determinísticas\r\nDiferentes formas de estimar a tendência e a sazonalidade determinísticas de uma série temporal. Testes de hipóteses também podem ser realizados para verificar a existência desses componentes.\r\n\r\n\r\n\r\n",
+      "last_modified": "2025-02-14T09:56:01-03:00"
     }
   ],
   "collections": []

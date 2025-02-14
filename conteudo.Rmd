@@ -1,0 +1,30 @@
+---
+title: "Conteúdos"
+description: |
+  Descrição dos conteúdos abordados, bem como tutoriais em R.
+#author:
+#  - name: Nora Jones 
+#    url: https://example.com/norajones
+#    affiliation: Spacely Sprockets
+#    affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Séries Temporais
+
+## Introdução às Séries Temporais
+
+Introdução à conceitos importantes como o que é uma série temporal, como ela pode ser estudada e interpretada, autocorrelações, defasagem e processos estocásticos.
+
+## Tendência e Sazonalidade Determinísticas
+
+Diferentes formas de estimar a tendência e a sazonalidade determinísticas de uma série temporal. Testes de hipóteses também podem ser realizados para verificar a existência desses componentes.

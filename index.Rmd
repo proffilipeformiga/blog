@@ -21,18 +21,14 @@ site: distill::distill_website
 
 ## Formação
 
-**Universidade Federal do Piauí** | Teresina-PI
+- Graduação em **Bacharelado em Estatística** - Universidade Federal do Piauí | 2009 - 2013
 
-Graduação em Estatística | 2009 - 2013
+- Mestrado em **Estatística Aplicada e Biometria** | 2013 - 2015
 
-**Universidade Federal de Viçosa** | Viçosa-MG
+- Doutorado em **Estatística Aplicada e Biometria** | 2015 - 2018
 
-Mestrado em Estatística Aplicada e Biometria | 2013 - 2015
-
-Doutorado em Estatística Aplicada e Biometria | 2015 - 2018
-
-Pós-Doutorado em Estatística Aplicada e Biometria | 2022 - 2023
+- Pós-Doutorado em **Estatística Aplicada e Biometria** | 2022 - 2023
 
 ## Experiência
 
-**Universidade Federal do Piauí** | Professor Adjunto | 2016 - Presente
+- Professor Adjunto da **Universidade Federal do Piauí** | 2016 - Presente
