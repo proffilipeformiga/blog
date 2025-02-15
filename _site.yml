@@ -12,8 +12,8 @@ navbar:
       href: blogp.html
     - text: "Conteúdo"
       menu:
-        - text: "Estatística"
-          href: conteudo.html 
+        - text: "Séries Temporais"
+          href: series.html 
         - text: "R"
           href: conteudo2.html           
 output: distill::distill_article

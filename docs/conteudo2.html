@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-02-14"/>
-  <meta property="article:created" itemprop="dateCreated" content="2025-02-14"/>
+  <meta property="article:published" itemprop="datePublished" content="2025-02-15"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-02-15"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Prof. Filipe Formiga: Tutoriais em R (em construção)"/>
@@ -113,7 +113,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Tutoriais em R (em construção)"]},{"type":"character","attributes":{},"value":["Pendente.\n"]},{"type":"character","attributes":{},"value":["2025-02-14"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Tutoriais em R (em construção)"]},{"type":"character","attributes":{},"value":["Pendente.\n"]},{"type":"character","attributes":{},"value":["2025-02-15"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2181,6 +2181,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
   /* base variables */
 
@@ -2198,7 +2199,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   html {
     /*-- Main font sizes --*/
-    --title-size:      50px;
+    --title-size:      40px;
     --body-size:       1.06rem;
     --code-size:       14px;
     --aside-size:      12px;
@@ -2208,7 +2209,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --header-color:    #05192d;
     --body-color:      #05192d;
     --aside-color:     #05192d;
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   #05192d;
     /*-- Specify custom fonts ~~~ must be imported above   --*/
     --heading-font:    Poppins;
     --mono-font:       Poppins;
@@ -2287,6 +2288,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   d-article li {
     margin-bottom: 0em;
+  }
+
+  pre, pre code, .sourceCode, .custom-output {
+      font-family: "IBM Plex Mono", "Courier New", monospace !important;
+      font-size: 16px !important;
+      font-weight: bold !important;
+  }
+
+  /* Ajustar espaçamento inferior dos títulos */
+  h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 14px; /* Ajuste conforme necessário */
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  d-article h1 {
+    color: #05192d !important;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+
+  d-article h2 {
+    color: #05192d !important;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: none !important;
+  }
+
+  d-article h3 {
+    color: #05192d !important;
+    font-size: 18px;
+    font-weight: bold;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2463,7 +2507,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Tutoriais em R (em construção)","description":"Pendente.","authors":[],"publishedDate":"2025-02-14T00:00:00.000-03:00"}
+{"title":"Tutoriais em R (em construção)","description":"Pendente.","authors":[],"publishedDate":"2025-02-15T00:00:00.000-03:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2484,7 +2528,7 @@ Conteúdo
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="conteudo.html">Estatística</a>
+<a href="series.html">Séries Temporais</a>
 <a href="conteudo2.html">R</a>
 </div>
 </div>
@@ -2507,9 +2551,35 @@ Conteúdo
 
 <div class="d-article">
 <h2 id="primeiros-passos">Primeiros passos</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>      mpg             cyl             disp             hp       
+ Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+ 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+ Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+ Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+ 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+ Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+      drat             wt             qsec             vs        
+ Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+ 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+ Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+ Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+ 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+ Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+       am              gear            carb      
+ Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+ 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+ Median :0.0000   Median :4.000   Median :2.000  
+ Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+ 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+ Max.   :1.0000   Max.   :5.000   Max.   :8.000  </code></pre>
+</div>
 <h2 id="dplyr"><em>dplyr</em></h2>
 <h2 id="ggplot2"><em>ggplot2</em></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

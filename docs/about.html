@@ -2178,6 +2178,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <style type="text/css">@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
   /* base variables */
 
@@ -2195,7 +2196,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   html {
     /*-- Main font sizes --*/
-    --title-size:      50px;
+    --title-size:      40px;
     --body-size:       1.06rem;
     --code-size:       14px;
     --aside-size:      12px;
@@ -2205,7 +2206,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --header-color:    #05192d;
     --body-color:      #05192d;
     --aside-color:     #05192d;
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
+    --fig-cap-color:   #05192d;
     /*-- Specify custom fonts ~~~ must be imported above   --*/
     --heading-font:    Poppins;
     --mono-font:       Poppins;
@@ -2284,6 +2285,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   d-article li {
     margin-bottom: 0em;
+  }
+
+  pre, pre code, .sourceCode, .custom-output {
+      font-family: "IBM Plex Mono", "Courier New", monospace !important;
+      font-size: 16px !important;
+      font-weight: bold !important;
+  }
+
+  /* Ajustar espaçamento inferior dos títulos */
+  h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 14px; /* Ajuste conforme necessário */
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  d-article h1 {
+    color: #05192d !important;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+
+  d-article h2 {
+    color: #05192d !important;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: none !important;
+  }
+
+  d-article h3 {
+    color: #05192d !important;
+    font-size: 18px;
+    font-weight: bold;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2481,7 +2525,7 @@ Conteúdo
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="conteudo.html">Estatística</a>
+<a href="series.html">Séries Temporais</a>
 <a href="conteudo2.html">R</a>
 </div>
 </div>
