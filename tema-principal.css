@@ -109,6 +109,38 @@ d-article li {
   margin-bottom: 0em;
 }
 
+/* Definir estilos personalizados para código fonte em R */
+
+/* Cor para funções */
+span.fu {
+    color: #05192d !important;  /* Verde neon */
+    font-weight: bold !important;
+}
+
+/* Cor para parênteses e operadores matemáticos */
+span.op {
+    color: #ff5400 !important;  /* Laranja */
+}
+
+/* Cor para objetos e variáveis */
+span.va {
+    font-style: italic !important;
+}
+
+/* Cor para funções do ggplot2, como geom_point() */
+span {
+    color: #05192d !important;  /* Azul escuro */
+}
+
+/* Ajustar a aparência do código-fonte como um todo */
+.sourceCode {
+    background-color: #f5f5f5 !important;  /* Fundo cinza claro */
+    padding: 10px !important;
+    border-radius: 20px !important;
+    font-family: "IBM Plex Mono", "Courier New", monospace !important;
+    font-size: 16px !important;
+}
+
 pre, pre code, .sourceCode, .custom-output {
     font-family: "IBM Plex Mono", "Courier New", monospace !important;
     font-size: 16px !important;

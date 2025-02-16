@@ -1,7 +1,7 @@
 ---
 title: "Iniciando os trabalhos com o ggplot2"
 description: |
-  'Tutorial inicial sobre o pacote ggplot2.'
+  Tutorial inicial sobre o pacote ggplot2.
 output:
   distill::distill_article:
     self_contained: false

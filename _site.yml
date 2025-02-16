@@ -10,10 +10,20 @@ navbar:
       href: index.html
     - text: "Blog"
       href: blogp.html
-    - text: "Conteúdo"
+    - text: "Conteúdos"
       menu:
         - text: "Séries Temporais"
-          href: series.html 
-        - text: "R"
-          href: conteudo2.html           
+          href: series.html
+#        - text: "Estatística Descritiva"
+#          href: estdesc.html # criar
+#        - text: "Probabilidade"
+#          href: probabilidade.html    # criar
+#        - text: "Inferência"
+#          href: inferencia.html # criar
+    - text: "Tutoriais"
+      menu:
+        - text: "R (Introdução)"
+          href: rintrod.html
+        - text: "ggplot2"
+          href: rggplot2.html 
 output: distill::distill_article

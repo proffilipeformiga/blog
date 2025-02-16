@@ -88,32 +88,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-<title>Prof. Filipe Formiga: Iniciando os trabalhos com o ggplot2 (ggplot2 #01)</title>
+<title>Prof. Filipe Formiga: Iniciando os trabalhos com o ggplot2</title>
 
-<meta property="description" itemprop="description" content="&#39;Tutorial inicial sobre o pacote **ggplot2**.&#39;"/>
+<meta property="description" itemprop="description" content="Tutorial inicial sobre o pacote ggplot2."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2025-02-15"/>
-<meta property="article:created" itemprop="dateCreated" content="2025-02-15"/>
+<meta property="article:published" itemprop="datePublished" content="2025-02-16"/>
+<meta property="article:created" itemprop="dateCreated" content="2025-02-16"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Prof. Filipe Formiga: Iniciando os trabalhos com o ggplot2 (ggplot2 #01)"/>
+<meta property="og:title" content="Prof. Filipe Formiga: Iniciando os trabalhos com o ggplot2"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="&#39;Tutorial inicial sobre o pacote **ggplot2**.&#39;"/>
+<meta property="og:description" content="Tutorial inicial sobre o pacote ggplot2."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Prof. Filipe Formiga"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Prof. Filipe Formiga: Iniciando os trabalhos com o ggplot2 (ggplot2 #01)"/>
-<meta property="twitter:description" content="&#39;Tutorial inicial sobre o pacote **ggplot2**.&#39;"/>
+<meta property="twitter:title" content="Prof. Filipe Formiga: Iniciando os trabalhos com o ggplot2"/>
+<meta property="twitter:description" content="Tutorial inicial sobre o pacote ggplot2."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Iniciando os trabalhos com o ggplot2 (ggplot2 #01)"]},{"type":"character","attributes":{},"value":["'Tutorial inicial sobre o pacote **ggplot2**.'"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["02-15-2025"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output","date"]}},"value":[{"type":"character","attributes":{},"value":["Iniciando os trabalhos com o ggplot2"]},{"type":"character","attributes":{},"value":["Tutorial inicial sobre o pacote ggplot2."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["02-16-2025"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2294,6 +2294,38 @@ d-article li {
   margin-bottom: 0em;
 }
 
+/* Definir estilos personalizados para código fonte em R */
+
+/* Cor para funções */
+span.fu {
+    color: #05192d !important;  /* Verde neon */
+    font-weight: bold !important;
+}
+
+/* Cor para parênteses e operadores matemáticos */
+span.op {
+    color: #ff5400 !important;  /* Laranja */
+}
+
+/* Cor para objetos e variáveis */
+span.va {
+    font-style: italic !important;
+}
+
+/* Cor para funções do ggplot2, como geom_point() */
+span {
+    color: #05192d !important;  /* Azul escuro */
+}
+
+/* Ajustar a aparência do código-fonte como um todo */
+.sourceCode {
+    background-color: #f5f5f5 !important;  /* Fundo cinza claro */
+    padding: 10px !important;
+    border-radius: 20px !important;
+    font-family: "IBM Plex Mono", "Courier New", monospace !important;
+    font-size: 16px !important;
+}
+
 pre, pre code, .sourceCode, .custom-output {
     font-family: "IBM Plex Mono", "Courier New", monospace !important;
     font-size: 16px !important;
@@ -2512,7 +2544,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Iniciando os trabalhos com o ggplot2 (ggplot2 #01)","description":"'Tutorial inicial sobre o pacote **ggplot2**.'","authors":[],"publishedDate":"2025-02-15T00:00:00.000-03:00"}
+{"title":"Iniciando os trabalhos com o ggplot2","description":"Tutorial inicial sobre o pacote ggplot2.","authors":[],"publishedDate":"2025-02-16T00:00:00.000-03:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2528,13 +2560,23 @@ d-appendix d-footnote-list a.footnote-backlink {
 <a href="../../blogp.html">Blog</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
-Conteúdo
+Conteúdos
  
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
 <a href="../../series.html">Séries Temporais</a>
-<a href="../../conteudo2.html">R</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Tutoriais
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="../../rintrod.html">R (Introdução)</a>
+<a href="../../rggplot2.html">ggplot2</a>
 </div>
 </div>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2546,11 +2588,11 @@ Conteúdo
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Iniciando os trabalhos com o ggplot2 (ggplot2 #01)</h1>
+<h1>Iniciando os trabalhos com o ggplot2</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>‘Tutorial inicial sobre o pacote <strong>ggplot2</strong>.’</p></p>
+<p><p>Tutorial inicial sobre o pacote ggplot2.</p></p>
 </div>
 
 

@@ -1,14 +1,14 @@
 [
   {
     "path": "blog1/2025-02-14-ggplot2basico/",
-    "title": "Iniciando os trabalhos com o ggplot2 (ggplot2 #01)",
-    "description": "'Tutorial inicial sobre o pacote **ggplot2**.'",
+    "title": "Iniciando os trabalhos com o ggplot2",
+    "description": "Tutorial inicial sobre o pacote ggplot2.",
     "author": [],
-    "date": "2025-02-15",
+    "date": "2025-02-16",
     "categories": [],
     "contents": "\r\nO que é ggplot2?\r\nO ggplot2 é um pacote criado na liguagem R que tem como objetivo criar, editar e modificar gráficos de alta qualidade, facilitando a interpretação de resultados de coletas de dados e extração de insights acerca dos dados.\r\n\r\n\r\nggplot(mtcars, aes(x = mpg, y = hp)) +\r\n  geom_point()\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "blog1/2025-02-14-ggplot2basico/ggplot2basico_files/figure-html5/exemplo_1-1.png",
-    "last_modified": "2025-02-15T16:39:44-03:00",
+    "last_modified": "2025-02-16T09:32:39-03:00",
     "input_file": {}
   }
 ]
