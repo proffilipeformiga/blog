@@ -6,21 +6,21 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-02-16T12:04:38-03:00"
+      "last_modified": "2025-02-23T11:44:04-03:00"
     },
     {
       "path": "blogp.html",
       "title": "Blog posts",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-02-16T12:04:38-03:00"
+      "last_modified": "2025-02-23T11:44:04-03:00"
     },
     {
       "path": "index.html",
       "title": "Prof. Filipe Formiga",
       "author": [],
       "contents": "\r\n\r\n          \r\n          \r\n          Prof. Filipe Formiga\r\n          \r\n          \r\n          Início\r\n          Blog\r\n          \r\n          \r\n          Conteúdos\r\n           \r\n          ▾\r\n          \r\n          \r\n          Séries Temporais\r\n          \r\n          \r\n          \r\n          \r\n          Tutoriais\r\n           \r\n          ▾\r\n          \r\n          \r\n          R (Introdução)\r\n          ggplot2\r\n          \r\n          \r\n          ☰\r\n          \r\n          \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Prof. Filipe Formiga\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                         LinkedIn\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Email\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                         Youtube\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            \r\n            Bio\r\n            \r\n            \r\n            \r\n            Formação\r\n            Graduação em Bacharelado em\r\n            Estatística - Universidade Federal do Piauí | 2009\r\n            - 2013\r\n            Mestrado em Estatística Aplicada e\r\n            Biometria - Universidade Federal de Viçosa | 2013 -\r\n            2015\r\n            Doutorado em Estatística Aplicada e\r\n            Biometria - Universidade Federal de Viçosa | 2015 -\r\n            2018\r\n            Pós-Doutorado em Estatística Aplicada e\r\n            Biometria - Universidade Federal de Viçosa | 2022 -\r\n            2023\r\n            \r\n            \r\n            Experiência\r\n            Professor Adjunto da Universidade Federal do\r\n            Piauí | 2016 - Presente\r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Prof. Filipe Formiga\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                       LinkedIn\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Email\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                       Youtube\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              \r\n              Bio\r\n              \r\n              \r\n              \r\n              Formação\r\n              Graduação em Bacharelado em\r\n              Estatística - Universidade Federal do Piauí |\r\n              2009 - 2013\r\n              Mestrado em Estatística Aplicada e\r\n              Biometria - Universidade Federal de Viçosa | 2013\r\n              - 2015\r\n              Doutorado em Estatística Aplicada e\r\n              Biometria - Universidade Federal de Viçosa | 2015\r\n              - 2018\r\n              Pós-Doutorado em Estatística Aplicada e\r\n              Biometria - Universidade Federal de Viçosa | 2022\r\n              - 2023\r\n              \r\n              \r\n              Experiência\r\n              Professor Adjunto da Universidade Federal do\r\n              Piauí | 2016 - Presente\r\n              \r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
-      "last_modified": "2025-02-16T12:05:05-03:00"
+      "last_modified": "2025-02-23T11:44:32-03:00"
     },
     {
       "path": "rintrod.html",
@@ -29,7 +29,7 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\r\nPrimeiros passos\r\n\r\n\r\nsummary(mtcars)\r\n\r\n      mpg             cyl             disp             hp       \r\n Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \r\n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \r\n Median :19.20   Median :6.000   Median :196.3   Median :123.0  \r\n Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \r\n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \r\n Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \r\n      drat             wt             qsec             vs        \r\n Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \r\n 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \r\n Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \r\n Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \r\n 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \r\n Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \r\n       am              gear            carb      \r\n Min.   :0.0000   Min.   :3.000   Min.   :1.000  \r\n 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \r\n Median :0.0000   Median :4.000   Median :2.000  \r\n Mean   :0.4062   Mean   :3.688   Mean   :2.812  \r\n 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \r\n Max.   :1.0000   Max.   :5.000   Max.   :8.000  \r\n\r\ndplyr\r\nggplot2\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-02-16T12:05:07-03:00"
+      "last_modified": "2025-02-23T11:44:34-03:00"
     },
     {
       "path": "series.html",
@@ -43,7 +43,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\r\n\r\nContents\r\nIntrodução às Séries Temporais\r\nExemplo\r\nExemplo\r\n\r\n\r\nTendência e Sazonalidade\r\n\r\nIntrodução às Séries Temporais\r\nIntrodução à conceitos importantes como o que é uma série temporal, como ela pode ser estudada e interpretada, autocorrelações, defasagem e processos estocásticos.\r\nExemplo\r\nabd\r\nExemplo\r\nabcd\r\nTendência e Sazonalidade\r\nDiferentes formas de estimar a tendência e a sazonalidade determinísticas de uma série temporal. Testes de hipóteses também podem ser realizados para verificar a existência desses componentes.\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-02-16T12:05:08-03:00"
+      "last_modified": "2025-02-23T11:44:35-03:00"
     }
   ],
   "collections": ["blog1/blog1.json"]
