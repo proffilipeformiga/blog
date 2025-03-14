@@ -1,7 +1,7 @@
 ---
 title: "Séries Temporais"
 description: |
-  <span style="font-size: 18px; color: #05192d;">Teoria e prática (em R) o conteúdo de Séries Temporais. Para sugestão de conteúdos ou feedbacks, por favor envie e-mail para: prof.filipeformiga@gmail.com</span>
+  <span style="font-size: 18px; color: #05192d;">Teoria e prática (em R) o conteúdo de Séries Temporais.</span>
 author:
   - name: Filipe Formiga 
     url: https://example.com/norajones
@@ -9,7 +9,7 @@ date: "`r Sys.Date()`"
 output:
   distill::distill_article:
     toc: true
-    toc_depth: 3
+    toc_depth: 2
     toc_float: true
 ---
 
@@ -17,18 +17,108 @@ output:
 knitr::opts_chunk$set(echo = TRUE, language = "r")
 ```
 
-# Introdução às Séries Temporais
+# Considerações Iniciais
 
-Introdução à conceitos importantes como o que é uma série temporal, como ela pode ser estudada e interpretada, autocorrelações, defasagem e processos estocásticos.
+## Objetivos
 
-## Exemplo
+Essa página tem como objetivo apresentar os principais conceitos, ideias e aplicações sobre o conteúdo de Séries Temporais de maneira simples e acessível. Cada conceito será usualmente acompanhado por exemplos de aplicação e no software R.
 
-abd
+Embora feito com bastante critério, este material provavelmente não está isento de erros e será periodicamente atualizado. Em caso de dúvidas ou sugestões, favor entrar em contato com: prof.filipeformiga@gmail.com. Qualquer dúvida ou crítica construtiva será bem vinda!
 
-### Exemplo
+Dito isso, o primeiro passo para que se possa acompanhar este material é através da instalação e utilização dos pacotes `fpp2` e `tidyverse`, conforme abaixo:
 
-abcd
+```{r packages, message=FALSE, warning = FALSE}
+library(tidyverse)
+library(fpp2)
+```
 
-# Tendência e Sazonalidade
+Caso seja necessário o carregamento de outros pacotes, o faremos no decorrer do texto, mas os dois acima são essenciais em praticamente todos os tópicos deste material. O conteúdo dessa página pode ser resumido da seguinte maneira: \
 
-Diferentes formas de estimar a tendência e a sazonalidade determinísticas de uma série temporal. Testes de hipóteses também podem ser realizados para verificar a existência desses componentes.
+**Introdução:** serão apresentados os conceitos básicos, motivação e exemplos de séries temporais que servirão como pilares para os próximos tópicos.
+
+**Modelos de Suavização Exponencial:** neste tópico será abordada a decomposição de séries temporais (tendência e sazonalidade) segundo essa abordagem; métodos de estimação de tendência e sazonalidade, e ainda serão apresentados os modelos de Médias Móveis (MM) e Suavizações Exponenciais Simples (SES), de Holt (SEH) e Holt-Winters (HW).
+
+**Modelos de Box-Jenkins:** metodologias baseadas nos modelos probabilísticos de Box-Jenkins, onde serão apresentados modelos para séries estacionárias (AR, MA e ARMA), séries com tendência (ARIMA), sazonalidade (SARMA) e para séries com tendência e sazonalidade (SARIMA).
+
+## Principais Referências
+
+Este material consiste em um compilado de duas principais referências, como segue:
+
+* ***Forecasting, Principles and Pratice***, escrito por Rob J. Hyndman e George Athanasopoulos: este livro está disponível como página da web, e por ser acessado através do link: https://otexts.com/fpp3/.
+* ***Análise de Séries Temporais: Modelos Univariados***: abrange grande parte do material teórico disponibilizado. O livro pode ser adquirido em: .
+
+O conteúdo será atualizado semanalmente, e à medida que novos materiais forem utilizados, estes serão adicionados à lista acima.
+
+# Introdução
+
+## Conceitos básicos e notação
+
+Como o próprio nome já descreve, uma série temporal é **qualquer conjunto de observações ordenadas no tempo**. São exemplos de séries temporais:
+
+* médias diárias de temperatura em determinada cidade;
+* índices diários da bolsa de valores (IBOVESPA);
+* valores diários da cotação do dólar;
+* registro de marés no porto de Santos;
+* número mensal de passageiros de determinada companhia aérea;
+* dentre outros exemplos.
+
+Perceba que se olharmos, por exemplo, para a média diária de temperatura de determinada cidade temos um valor específico para a temperatura (denotado por $Z$) para cada período de tempo ($t$), que estão sendo contabilizado em dias. Este é um caso em que temos uma série em intervalos **discretos**, pois temos um valor da variável de interesse em pontos bem definidos.
+
+Já o caso do registro de marés no porto de Santos se trata de uma variável em intervalos **contínuos**, pois essa característica é medida em um intervalo contínuo sendo composto por infinitos valores. Para medir o tempo em séries contínuas usualmente tomam-se intervalos $\Delta t$ de tempo e se faz uma "discretização" da série para que intervalos bem definidos sejam utilizados. Esse procedimento é usualmente utilizado porque além de simplificar e organizar a informação contida na série, não acarreta em perdas de acurácia ou precisão na análise.
+
+Séries temporais são inicialmente identificadas e observadas através de um gráfico de linhas, em que no eixo $X$ dispomos do tempo ($t$) enquanto no eixo $Y$ podemos observar a nossa variável de interesse ($Z$).
+
+Para iniciarmos o conhecimento sobre a notação, considere o seguinte exemplo, carregando o pacote `fpp2` e a base de dados `elecsales`. Essa série se refere às vendas anuais de eletricidade para a Austrália do Sul, em GWh, entre os anos de 1989 e 2008.
+
+```{r elec1}
+elecsales
+```
+
+Aqui, podemos definir alguns conceitos importantes, como:
+
+* $Z_t$: é a t-ésima observação ($t = 1, ... , T$) da variável de interesse $Z$, já descrita anteriormente. Para o exemplo, $Z_{1} = 2354,34; ...; Z_{20} = 3655,00$;
+* $t$: é o índice da observação da variável $Z$. Exemplo: $Z_1$ denota a primeira observação de $Z$; $Z_2$ é a segunda observação, e assim por diante ($t=1,..., T$);
+* $T$: tamanho da amostra, sendo para este caso, $T=20$. Sempre observar a diferença entre o índice $t$ e o total amostral $T$;
+* **Período**: é a frequência das observações da série em estudo. Neste caso, como temos uma observação por ano, **o período é anual**;
+* $Z_1$, na notação do exemplo, representa o valor da variável $Z$ no período 1, que neste caso se refere ao ano de $1989$, e assim por diante.
+
+Note que precisamos inicialmente identificar o que estamos estudando (variável $Z$), o período (no exemplo, em anos) e o tamanho amostral. Essa informação pode parecer óbvia, mas a interpretação até mesmo de modelos avançados de séries temporais dependem do conhecimento desses elementos básicos. O período pode se apresentar em anos, meses, trimestres, semestres ou em unidades de tempo menores como horas, minutos, segundos etc.
+
+Para visualizar uma série temporal podemos utilizar a função `autoplot`, do pacote `fpp2` e adicionar alguns elementos do `fpp2`, já que essa função é baseada neste pacote.
+
+```{r gg1}
+autoplot(elecsales, colour = 'deepskyblue', size = 2,
+         xlab = 'Ano', ylab = 'Energia vendida (GWh)') +
+  theme_classic()
+```
+
+Dentre alguns argumentos importantes dessa função, temos:
+
+* `colour`: define a cor utilizada na linha. Uma quantidade considerável de opções de cores pode ser acessada [clicando aqui](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf);
+* `size`: determina a largura da linha;
+* `xlab` e `ylab`: títulos dos eixos;
+* `theme_classic()`: altera o tema utilizado. Acesse a [biblioteca do ggplot2](https://ggplot2.tidyverse.org/reference/ggtheme.html) para encontrar diferentes temas, caso seja necessário.
+
+Para mais detalhes sobre a função `autoplot`, acesse a [documentação da função](https://www.rdocumentation.org/packages/survMisc/versions/0.4.2/topics/autoplot).
+
+A função `autoplot` detecta o tipo do objeto em que se deseja extrair o gráfico e realiza a operação da maneira que julga adequada. A Figura acima, por exemplo, resulta em um gráfico de série temporal por conta do tipo do objeto `elecsales`:
+
+```{r electipo}
+class(elecsales)
+```
+
+Por padrão, a classe do R utilizada para denotar séries temporais é dada acima (`ts`, representando a abreviação de *time series*). Outros tipos serão utilizados posteriormente para trabalhar com esse tipo de análise, mas por hora vamos nos concentrar nos objetos da classe `ts`.
+
+## Objetivos e motivação
+
+Ao coletar e observar os dados no tempo de determinada série $Z_{t}=Z_{1}, ..., Z_{T}$, o pesquisador pode estar em:
+
+* fazer previsões de valores futuros da série;
+* descrever o comportamento da série;
+* procurar periodicidades relevantes nos dados;
+* investigar o mecanismo gerador da série;
+* entre outros.
+
+Existem inúmeros métodos (conhecidos ou não) para atingir os objetivos acima, e a maioria deles são baseados na construção de **modelos probabilísticos** que ao serem criados, usualmente são capazes de descrever o comportamento de uma série temporal. Para entender melhor sobre estes modelos, as próximas 3 sessões auxiliam no aprendizado de conceitos básicos que serão úteis para a construção desse modelo.
+
+**É muito importante que todas elas sejam estudadas e entendidas antes de ir para as próximas etapas**, já que são praticamente um dicionário dos termos que serão utilizados de agora em diante.

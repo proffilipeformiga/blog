@@ -8,9 +8,9 @@ navbar:
   right:
     - text: "Início"
       href: index.html
-    - text: "Blog"
-      href: blogp.html
-    - text: "Conteúdos"
+#    - text: "Blog"
+#      href: blogp.html
+    - text: "Estatística"
       menu:
         - text: "Séries Temporais"
           href: series.html
@@ -20,10 +20,10 @@ navbar:
 #          href: probabilidade.html    # criar
 #        - text: "Inferência"
 #          href: inferencia.html # criar
-    - text: "Tutoriais"
-      menu:
-        - text: "R (Introdução)"
-          href: rintrod.html
-        - text: "ggplot2"
-          href: rggplot2.html 
+#    - text: "Tutoriais"
+#      menu:
+#        - text: "R (Introdução)"
+#          href: rintrod.html
+#        - text: "ggplot2"
+#          href: rggplot2.html 
 output: distill::distill_article

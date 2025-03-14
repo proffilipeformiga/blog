@@ -61,4 +61,6 @@ Note que as demais camadas não foram especificadas. Mas não significa necessar
 * **`facets`**: por padrão, apenas um gráfico é gerado. Como não houve especificação, aplicou-se o padrão;
 * **`statistics`**: não se aplicou, visto que não foram incluídas estatísticas no gráfico;
 * **`coordinates`**: utilizou-se as coordenadas padrão, considerando o eixo X. Mas existe a opção de inverter as coordenadas;
-* **`theme`**: não foi especificado, mas o tema padrão do `ggplot2` foi utilizado;
+* **`theme`**: não foi especificado, mas o tema padrão do `ggplot2` foi utilizado.
+
+Portanto, em um gráfico simples, precisamos especificar pelo menos essas três camadas.

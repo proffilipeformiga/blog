@@ -15,10 +15,6 @@ output:
 site: distill::distill_website
 ---
  
-# Bio
-
--
-
 # Formação
 
 - Graduação em **Bacharelado em Estatística** - Universidade Federal do Piauí | 2009 - 2013
