@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-03-14"/>
-  <meta property="article:created" itemprop="dateCreated" content="2025-03-14"/>
+  <meta property="article:published" itemprop="datePublished" content="2025-03-18"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-03-18"/>
   <meta name="article:author" content="Filipe Formiga"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Séries Temporais"]},{"type":"character","attributes":{},"value":["<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Filipe Formiga"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["2025-03-14"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Séries Temporais"]},{"type":"character","attributes":{},"value":["<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Filipe Formiga"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["2025-03-18"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2341,7 +2341,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   d-article h1 {
@@ -2360,7 +2360,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   d-article h3 {
     color: #05192d !important;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
   }</style>
   <style type="text/css">
@@ -2538,7 +2538,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Séries Temporais","description":"<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>","authors":[{"author":"Filipe Formiga","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-03-14T00:00:00.000-03:00","citationText":"Formiga, 2025"}
+{"title":"Séries Temporais","description":"<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>","authors":[{"author":"Filipe Formiga","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-03-18T00:00:00.000-03:00","citationText":"Formiga, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2580,7 +2580,7 @@ Estatística
 <div class="d-byline">
   Filipe Formiga <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> 
   
-<br/>2025-03-14
+<br/>2025-03-18
 </div>
 
 <div class="d-article">
@@ -2597,6 +2597,8 @@ Estatística
 <ul>
 <li><a href="#conceitos-básicos-e-notação" id="toc-conceitos-básicos-e-notação">Conceitos básicos e notação</a></li>
 <li><a href="#objetivos-e-motivação" id="toc-objetivos-e-motivação">Objetivos e motivação</a></li>
+<li><a href="#abordagens-de-uma-série-temporal" id="toc-abordagens-de-uma-série-temporal">Abordagens de uma série temporal</a></li>
+<li><a href="#autocorrelação-e-defasagem" id="toc-autocorrelação-e-defasagem">Autocorrelação e defasagem</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2667,7 +2669,7 @@ Frequency = 1
 <span>         xlab <span class='op'>=</span> <span class='st'>'Ano'</span>, ylab <span class='op'>=</span> <span class='st'>'Energia vendida (GWh)'</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_classic</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="series_files/figure-html5/gg1-1.png" width="624" /></p>
+<p><img src="series_files/figure-html5/gg1-1.png" width="624" style="display: block; margin: auto;" /></p>
 </div>
 <p>Dentre alguns argumentos importantes dessa função, temos:</p>
 <ul>
@@ -2696,7 +2698,148 @@ Frequency = 1
 </ul>
 <p>Existem inúmeros métodos (conhecidos ou não) para atingir os objetivos acima, e a maioria deles são baseados na construção de <strong>modelos probabilísticos</strong> que ao serem criados, usualmente são capazes de descrever o comportamento de uma série temporal. Para entender melhor sobre estes modelos, as próximas 3 sessões auxiliam no aprendizado de conceitos básicos que serão úteis para a construção desse modelo.</p>
 <p><strong>É muito importante que todas elas sejam estudadas e entendidas antes de ir para as próximas etapas</strong>, já que são praticamente um dicionário dos termos que serão utilizados de agora em diante.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="abordagens-de-uma-série-temporal">Abordagens de uma série temporal</h2>
+<p>Para facilitar o entendimento do nosso estudo, vamos inicialmente dividir a análise de séries temporais em duas principais abordagens, a <strong>clássica</strong> e a <strong>moderna</strong> (Figura 2).</p>
+<figure>
+<img src="mapam-st.png" alt="Figura 2: Abordagens de séries temporais consideradas." />
+<figcaption aria-hidden="true">Figura 2: Abordagens de séries temporais consideradas.</figcaption>
+</figure>
+<p>Em ambas as abordagens, existem métodos capazes de descrever de maneira satisfatória o comportamento dos dados em estudo, bem como de fazer boas previsões para o futuro.</p>
+<h3 id="abordagem-clássica">Abordagem clássica</h3>
+<p>Na abordagem clássica (ou ``determinística’’), a série temporal pode ser interpretada por uma soma (modelos aditivos) ou produto (modelos multiplicativos) dos seus <strong>componentes</strong>. Por hora, os componentes de uma série temporal neste caso serão:</p>
+<ul>
+<li><strong>Tendência (<span class="math inline">\(T_t\)</span>):</strong> quando a série apresenta um crescimento ou decrescimento de acordo com o tempo, podendo seguir diferentes padrões;</li>
+<li><strong>Sazonalidade (<span class="math inline">\(S_t\)</span>):</strong> consiste na série apresentar um comportamento semelhante em determinados períodos regulares. Esses pedíodos podem ser semanais, trimestrais, mensais etc;</li>
+<li><strong>Ruído (ou erro) (<span class="math inline">\(a_t\)</span>):</strong> parte residual, apresentando a variação aleatória da série.</li>
+</ul>
+<p>Sendo assim, cada observação da série, <span class="math inline">\(Z_t\)</span>, será composta por:</p>
+<ul>
+<li>Segundo o <strong>modelo aditivo</strong>:</li>
+</ul>
+<p><span class="math display">\[Z_t = T_t + S_t + a_t\]</span></p>
+<ul>
+<li>Segundo o <strong>modelo multiplicativo</strong>:</li>
+</ul>
+<p><span class="math display">\[Z_t = T_t . S_t . a_t\]</span></p>
+<p>Na prática, os métodos consistem na estimação individual de cada termo presente nas equações, e a soma ou produto destes resulta em cada valor observado.</p>
+<p>Considere, inicialmente, a série temporal <code>AirPassengers</code>, que faz parte da base de dados do R:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span><span class='op'>(</span><span class='va'>AirPassengers</span>, size <span class='op'>=</span> <span class='fl'>1</span>,</span>
+<span>         xlab <span class='op'>=</span> <span class='st'>'Mês / Ano'</span>, ylab <span class='op'>=</span> <span class='st'>'Passageiros'</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_classic</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="series_files/figure-html5/airp-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<p>Para ilustração dos conceitos discutidos, vamos <strong>decompor essa série</strong> nos seus respectivos componentes, o que pode ser visualizado através dos modelos:</p>
+<ul>
+<li><strong>Aditivo:</strong></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/decompose.html'>decompose</a></span><span class='op'>(</span><span class='va'>AirPassengers</span>,</span>
+<span>                   type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'additive'</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_classic</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>'Decomposição: modelo aditivo'</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="series_files/figure-html5/airp_ad-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<ul>
+<li><strong>Multiplicativo:</strong></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/decompose.html'>decompose</a></span><span class='op'>(</span><span class='va'>AirPassengers</span>,</span>
+<span>                   type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'multiplicative'</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_classic</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>'Decomposição: modelo multiplicativo'</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="series_files/figure-html5/airp_mult-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<p>Como se pode observar, cada componente em cada ponto é estimado e utilizado para ``construção’’ de cada observação <span class="math inline">\(Z_t\)</span>. Os principais métodos dessa abordagem são os <strong>Métodos de Suavização Exponencial</strong>, que futuramente serão discutidos.</p>
+<h3 id="abordagem-moderna">Abordagem moderna</h3>
+<p>Na abordagem moderna (ou ``estocástica’’), consideraremos que cada série temporal observada é gerada por um <strong>processo estocástico</strong>. Isso significa que existe um ou mais <strong>modelos probabilísticos</strong> capazes de descrever este processo. Sendo assim, o principal objetivo das suas metodologias relacionadas é <strong>identificar estes modelos</strong>, de modo que quando a tarefa é realizada com sucesso, adquirimos a possibilidade de realizar projeções e fazer inferências acerca do futuro da série em estudo.</p>
+<p>Para entender melhor a ideia, observe a seguinte Figura:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="series_files/figure-html5/procest-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<p>De modo simplificado, as séries <code>S1</code> (verde), <code>S2</code> (roxo), <code>S3</code> (laranja) e <code>S4</code> (azul) representam 4 caminhos possíveis para esse processo estocástico, enquanto <code>S5</code> (azul escuro) mostra a <strong>média</strong> desses processos. As séries foram observadas no intervalo dos inteiros de 1 a 100. Nessa circunstância, um mesmo processo estocástico foi responsável por gerar as 4 primeiras séries, ressaltando a natureza probabilística do nosso problema. Já a última série neste exemplo representa a <strong>função média</strong> <span class="math inline">\(\mu(t) = E[Z(t)]\)</span> dos processos observados. Na prática, nosso objetivo consiste em estimar uma função média capaz de modelar a série observada para seu comportamento seja corretamente identificado, e consequentemente, previsões acuradas possam ser feitas.</p>
+<p>Os métodos abordados futuramente para este objetivo serão os modelos de Box-Jenkins, também conhecidos como <strong>Modelos ARIMA</strong>.</p>
+<h2 id="autocorrelação-e-defasagem">Autocorrelação e defasagem</h2>
+<p>Uma das principais formas de descrever uma série temporal além da análise gráfica já apresentada é através da análise da <strong>correlação que a série possui com ela mesma, defasada em <span class="math inline">\(k\)</span> períodos</strong>. Este conceito é a ideia principal da <strong>autocorrelação</strong>, pois para entender o comportamento da série de modo que fiquemos possibilitados de fazer projeções futuras, é interessante ententermos primeiramente a relação que a série possui com ela mesmo no passado. Esse intervalo relacionado ao passado ou ao futuro da série temporal em estudo também é conhecido como <strong>defasagem</strong>, ou <strong><em>lag</em></strong>. A defasagem, como já dito, será denotada por <span class="math inline">\(k\)</span>. Segue alguns exemplos da nossa terminologia:</p>
+<ul>
+<li><span class="math inline">\(Z_{t-1}\)</span> representa a série <span class="math inline">\(Z_t\)</span> defasada em <span class="math inline">\(1\)</span> período;</li>
+<li><span class="math inline">\(Z_{t-2}\)</span> representa a série <span class="math inline">\(Z_t\)</span> defasada em <span class="math inline">\(2\)</span> períodos;</li>
+</ul>
+<p>e, de maneira geral:</p>
+<ul>
+<li><span class="math inline">\(Z_{t-k}\)</span> representa a série <span class="math inline">\(Z_t\)</span> defasada em <span class="math inline">\(k\)</span> períodos.</li>
+</ul>
+<p>Para cada defasagem <span class="math inline">\(k\)</span>, existe uma autocorrelação, estimada por <span class="math inline">\(r_k\)</span>. O conjunto de todos os pares <span class="math inline">\((k, r_k)\)</span> forma o que chamamos de <strong>Função de Autocorrelação (fac)</strong> de <span class="math inline">\(Z\)</span>.</p>
+<p>Antes de adentrar no cálculo das autocorrelações, vamos observar um exemplo. Considere a série <code>livestock</code>, do pacote <code>fpp2</code>. Essa série representa o número <strong>anual</strong> de rebanhos ovinos na Ásia (em milhões de cabeças), variando entre 1961 e 2007.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>livestock</span></span></code></pre>
+</div>
+<pre><code>Time Series:
+Start = 1961 
+End = 2007 
+Frequency = 1 
+ [1] 232.2890 229.5363 233.1459 243.7637 252.6029 259.6774 260.7669
+ [8] 269.7841 266.4150 263.9177 268.3072 260.6626 266.6394 277.5158
+[15] 283.8340 290.3090 292.4742 300.8307 309.2867 318.3311 329.3724
+[22] 338.8840 339.2441 328.6006 314.2554 314.4597 321.4138 329.7893
+[29] 346.3852 352.2979 348.3705 417.5629 417.1236 417.7495 412.2339
+[36] 411.9468 394.6971 401.4993 408.2705 414.2428 407.9980 403.4608
+[43] 413.8249 428.1050 445.3387 452.9942 455.7402</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/autoplot.html'>autoplot</a></span><span class='op'>(</span><span class='va'>livestock</span>, size <span class='op'>=</span> <span class='fl'>1</span>,</span>
+<span>         xlab <span class='op'>=</span> <span class='st'>'Ano'</span>,</span>
+<span>         ylab <span class='op'>=</span> <span class='st'>'Número de rebanhos'</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_classic</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="series_files/figure-html5/livestock1-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<p>Para calcular e entender a função de autocorrelação no R e apenas para título do nosso entendimento, vamos considerar as 10 primeiras autocorrelações e defasagens. Temos, portanto a seguinte opção:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>defasagem <span class='op'>=</span> <span class='fu'>Acf</span><span class='op'>(</span><span class='va'>livestock</span>, plot <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>$</span><span class='va'>lag</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>,</span>
+<span>           correlacao <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='fu'>Acf</span><span class='op'>(</span><span class='va'>livestock</span>, plot <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span><span class='op'>$</span><span class='va'>acf</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>   defasagem correlacao
+1          0       1.00
+2          1       0.92
+3          2       0.84
+4          3       0.76
+5          4       0.70
+6          5       0.64
+7          6       0.59
+8          7       0.54
+9          8       0.49
+10         9       0.45</code></pre>
+</div>
+<p>A saída acima é composta por duas colunas: a primeira representa a defasagem <span class="math inline">\(k\)</span>, e a segunda, a autocorrelação estimada correspondente <span class="math inline">\(r_k\)</span>. Podemos interpretar da seguinte maneira:</p>
+<ul>
+<li>Para a defasagem <span class="math inline">\(0\)</span> (<span class="math inline">\(k = 0\)</span>), a autocorrelação é igual a <span class="math inline">\(1\)</span> (<span class="math inline">\(r_0 = 1\)</span>) porque ao estabelecer <span class="math inline">\(k=0\)</span>, estamos calculando a correlação entre <span class="math inline">\(Z_t\)</span> e ela mesma, ou seja, <span class="math inline">\(Cor(Z_t, Z_t)\)</span>. Sendo assim, a correlação de uma variável com ela mesmo sempre será igual a <span class="math inline">\(1\)</span>;</li>
+<li>Para a defasagem <span class="math inline">\(1\)</span> (<span class="math inline">\(k=1\)</span>), a autocorrelação é igual a <span class="math inline">\(0,92\)</span> (<span class="math inline">\(r_1 = 0,92\)</span>), ou seja, <span class="math inline">\(Cov(Z_t, Z_{t-1}) = 0,92\)</span>;</li>
+<li>Para a defasagem <span class="math inline">\(2\)</span> (<span class="math inline">\(k=2\)</span>), a autocorrelação é igual a <span class="math inline">\(0,84\)</span> (<span class="math inline">\(r_2 = 0,84\)</span>), ou seja, <span class="math inline">\(Cov(Z_t, Z_{t-2}) = 0,84\)</span>;</li>
+</ul>
+<p>e assim por diante.</p>
+<p>Vamos agora considerar todas as defasagens <span class="math inline">\(0, 1, ..., 46\)</span> (OBS: a defasagem varia entre <span class="math inline">\(0\)</span> e <span class="math inline">\(T-1\)</span>, sendo T o tamanho da série temporal em estudo. Como a série possui <span class="math inline">\(47\)</span> observações, as defasagens vão de <span class="math inline">\(0\)</span> a <span class="math inline">\(46\)</span>).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'>Acf</span><span class='op'>(</span><span class='va'>livestock</span>, main <span class='op'>=</span> <span class='st'>''</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="series_files/figure-html5/livestock1_acf-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<p>O gráfico acima representa a função de autocorrelação da série <code>livestock</code>, onde no eixo <span class="math inline">\(X\)</span> (horizontal) podemos observar as defasagens, ou <em>lags</em> (coluna <code>defasagem</code> da saída anterior do R), enquanti as linhas verticais representam a autocorrelação para cada defasagem (coluna <code>correlacao</code> da saída anterior do R). Sobre esse tipo de gráfico como um todo, temos algumas considerações:</p>
+<ul>
+<li>Mesmo que a autocorrelação seja elevada para as primeiras defasagens, a tendência é que ela tenda a diminuir com o tempo, de maneira acentuada ou não;</li>
+<li>Quanto maior a autocorrelação (mais próxima de <span class="math inline">\(1\)</span> em módulo), maior a dependência temporal da série;</li>
+<li>Autocorrelações fora da linha tracejada azul podem ser consideradas significativas, enquanto autocorrelações dentro desse intervalo são consideradas irrelevantes.</li>
+</ul>
+<p>Outros termos e definições importantes serão acrescentados de acordo com o andamento da escrita deste material, mas até o momento, o que foi apresentado se trata de uma introdução às Séries Temporais, as principais abordagens e métodos descritivos que nos auxiliam na <strong>análise descritiva</strong> da série em estudo, bem como aplicações em linguagem R. A próxima seção terá como objetivo um maior aprofundamento sobre os componentes de uma série temporal: a Tendência e a Sazonalidade.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

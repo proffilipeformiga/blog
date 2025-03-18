@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, language = "r")
+knitr::opts_chunk$set(echo = TRUE, language = "r", fig.align = 'center')
 ```
 
 # Considerações Iniciais
@@ -122,3 +122,151 @@ Ao coletar e observar os dados no tempo de determinada série $Z_{t}=Z_{1}, ...,
 Existem inúmeros métodos (conhecidos ou não) para atingir os objetivos acima, e a maioria deles são baseados na construção de **modelos probabilísticos** que ao serem criados, usualmente são capazes de descrever o comportamento de uma série temporal. Para entender melhor sobre estes modelos, as próximas 3 sessões auxiliam no aprendizado de conceitos básicos que serão úteis para a construção desse modelo.
 
 **É muito importante que todas elas sejam estudadas e entendidas antes de ir para as próximas etapas**, já que são praticamente um dicionário dos termos que serão utilizados de agora em diante.
+
+## Abordagens de uma série temporal
+
+Para facilitar o entendimento do nosso estudo, vamos inicialmente dividir a análise de séries temporais em duas principais abordagens, a **clássica** e a **moderna** (Figura 2).
+
+![Figura 2: Abordagens de séries temporais consideradas.](mapam-st.png)
+
+Em ambas as abordagens, existem métodos capazes de descrever de maneira satisfatória o comportamento dos dados em estudo, bem como de fazer boas previsões para o futuro.
+
+### Abordagem clássica
+
+Na abordagem clássica (ou ``determinística''), a série temporal pode ser interpretada por uma soma (modelos aditivos) ou produto (modelos multiplicativos) dos seus **componentes**. Por hora, os componentes de uma série temporal neste caso serão:
+
+* **Tendência ($T_t$):** quando a série apresenta um crescimento ou decrescimento de acordo com o tempo, podendo seguir diferentes padrões;
+* **Sazonalidade ($S_t$):** consiste na série apresentar um comportamento semelhante em determinados períodos regulares. Esses pedíodos podem ser semanais, trimestrais, mensais etc;
+* **Ruído (ou erro) ($a_t$):** parte residual, apresentando a variação aleatória da série.
+
+Sendo assim, cada observação da série, $Z_t$, será composta por:
+
+* Segundo o **modelo aditivo**:
+
+$$Z_t = T_t + S_t + a_t$$
+
+* Segundo o **modelo multiplicativo**:
+
+$$Z_t = T_t . S_t . a_t$$
+
+Na prática, os métodos consistem na estimação individual de cada termo presente nas equações, e a soma ou produto destes resulta em cada valor observado.
+
+Considere, inicialmente, a série temporal `AirPassengers`, que faz parte da base de dados do R:
+
+```{r airp}
+autoplot(AirPassengers, size = 1,
+         xlab = 'Mês / Ano', ylab = 'Passageiros') +
+  theme_classic()
+```
+
+Para ilustração dos conceitos discutidos, vamos **decompor essa série** nos seus respectivos componentes, o que pode ser visualizado através dos modelos:
+
+* **Aditivo:**
+
+```{r airp_ad}
+autoplot(decompose(AirPassengers,
+                   type = c('additive'))) +
+  theme_classic() +
+  labs(title = 'Decomposição: modelo aditivo')
+```
+
+* **Multiplicativo:**
+
+```{r airp_mult}
+autoplot(decompose(AirPassengers,
+                   type = c('multiplicative'))) +
+  theme_classic() +
+  labs(title = 'Decomposição: modelo multiplicativo')
+```
+
+Como se pode observar, cada componente em cada ponto é estimado e utilizado para ``construção'' de cada observação $Z_t$. Os principais métodos dessa abordagem são os **Métodos de Suavização Exponencial**, que futuramente serão discutidos.
+
+### Abordagem moderna
+
+Na abordagem moderna (ou ``estocástica''), consideraremos que cada série temporal observada é gerada por um **processo estocástico**. Isso significa que existe um ou mais **modelos probabilísticos** capazes de descrever este processo. Sendo assim, o principal objetivo das suas metodologias relacionadas é **identificar estes modelos**, de modo que quando a tarefa é realizada com sucesso, adquirimos a possibilidade de realizar projeções e fazer inferências acerca do futuro da série em estudo.
+
+Para entender melhor a ideia, observe a seguinte Figura:
+
+```{r procest, echo = FALSE}
+RW = function(N, x0, mu, variance) {
+  z = cumsum(rnorm(n = N, mean = 0, sd = sqrt(variance)))
+  t = 1:N
+  x = x0 + t * mu + z
+  return(x)
+  }
+# mu is the drift
+
+set.seed(11)
+
+S1 = RW(100,10,0,0.0004)
+S2 = RW(100,10,0,0.0004)
+S3 = RW(100,10,0,0.0004)
+S4 = RW(100,10,0,0.0004)
+
+df1 = data.frame(t = c(1:100), S1, S2, S3, S4)
+df1 = df1 %>%
+  mutate(S5 = rowMeans(df1 %>% select(S1:S4)))
+
+df1 %>% pivot_longer(S1:S5, names_to = 'Série', values_to = 'Z') %>%
+  ggplot(aes(x = t, y = Z, color = Série)) + geom_line(linewidth = 2) +
+  labs(x = 't', y = 'Z', color = '') +
+  scale_color_manual(values = c('#03ef62', '#7933ff', '#ff931e','#06bdfc', '#05192d')) + 
+  theme_classic() +
+  theme(legend.position = 'top')
+```
+
+De modo simplificado, as séries `S1` (verde), `S2` (roxo), `S3` (laranja) e `S4` (azul) representam 4 caminhos possíveis para esse processo estocástico, enquanto `S5` (azul escuro) mostra a **média** desses processos. As séries foram observadas no intervalo dos inteiros de 1 a 100. Nessa circunstância, um mesmo processo estocástico foi responsável por gerar as 4 primeiras séries, ressaltando a natureza probabilística do nosso problema. Já a última série neste exemplo representa a **função média** $\mu(t) = E[Z(t)]$ dos processos observados. Na prática, nosso objetivo consiste em estimar uma função média capaz de modelar a série observada para seu comportamento seja corretamente identificado, e consequentemente, previsões acuradas possam ser feitas.
+
+Os métodos abordados futuramente para este objetivo serão os modelos de Box-Jenkins, também conhecidos como **Modelos ARIMA**.
+
+## Autocorrelação e defasagem
+
+Uma das principais formas de descrever uma série temporal além da análise gráfica já apresentada é através da análise da **correlação que a série possui com ela mesma, defasada em $k$ períodos**. Este conceito é a ideia principal da **autocorrelação**, pois para entender o comportamento da série de modo que fiquemos possibilitados de fazer projeções futuras, é interessante ententermos primeiramente a relação que a série possui com ela mesmo no passado. Esse intervalo relacionado ao passado ou ao futuro da série temporal em estudo também é conhecido como **defasagem**, ou ***lag***. A defasagem, como já dito, será denotada por $k$. Segue alguns exemplos da nossa terminologia:
+
+* $Z_{t-1}$ representa a série $Z_t$ defasada em $1$ período;
+* $Z_{t-2}$ representa a série $Z_t$ defasada em $2$ períodos;
+
+e, de maneira geral:
+
+* $Z_{t-k}$ representa a série $Z_t$ defasada em $k$ períodos.
+
+Para cada defasagem $k$, existe uma autocorrelação, estimada por $r_k$. O conjunto de todos os pares $(k, r_k)$ forma o que chamamos de **Função de Autocorrelação (fac)** de $Z$.
+
+Antes de adentrar no cálculo das autocorrelações, vamos observar um exemplo. Considere a série `livestock`, do pacote `fpp2`. Essa série representa o número **anual** de rebanhos ovinos na Ásia (em milhões de cabeças), variando entre 1961 e 2007.
+
+```{r livestock1}
+livestock
+autoplot(livestock, size = 1,
+         xlab = 'Ano',
+         ylab = 'Número de rebanhos') +
+  theme_classic()
+```
+
+Para calcular e entender a função de autocorrelação no R e apenas para título do nosso entendimento, vamos considerar as 10 primeiras autocorrelações e defasagens. Temos, portanto a seguinte opção:
+
+```{r livestock1_fac}
+data.frame(defasagem = Acf(livestock, plot = FALSE)$lag[1:10],
+           correlacao = round(Acf(livestock, plot = FALSE)$acf[1:10], 2))
+```
+
+A saída acima é composta por duas colunas: a primeira representa a defasagem $k$, e a segunda, a autocorrelação estimada correspondente $r_k$. Podemos interpretar da seguinte maneira:
+
+* Para a defasagem $0$ ($k = 0$), a autocorrelação é igual a $1$ ($r_0 = 1$) porque ao estabelecer $k=0$, estamos calculando a correlação entre $Z_t$ e ela mesma, ou seja, $Cor(Z_t, Z_t)$. Sendo assim, a correlação de uma variável com ela mesmo sempre será igual a $1$;
+* Para a defasagem $1$ ($k=1$), a autocorrelação é igual a $0,92$ ($r_1 = 0,92$), ou seja, $Cov(Z_t, Z_{t-1}) = 0,92$;
+* Para a defasagem $2$ ($k=2$), a autocorrelação é igual a $0,84$ ($r_2 = 0,84$), ou seja, $Cov(Z_t, Z_{t-2}) = 0,84$;
+
+e assim por diante.
+
+Vamos agora considerar todas as defasagens $0, 1, ..., 46$ (OBS: a defasagem varia entre $0$ e $T-1$, sendo T o tamanho da série temporal em estudo. Como a série possui $47$ observações, as defasagens vão de $0$ a $46$).
+
+```{r livestock1_acf}
+Acf(livestock, main = '')
+```
+
+O gráfico acima representa a função de autocorrelação da série `livestock`, onde no eixo $X$ (horizontal) podemos observar as defasagens, ou *lags* (coluna `defasagem` da saída anterior do R), enquanti as linhas verticais representam a autocorrelação para cada defasagem (coluna `correlacao` da saída anterior do R). Sobre esse tipo de gráfico como um todo, temos algumas considerações:
+
+* Mesmo que a autocorrelação seja elevada para as primeiras defasagens, a tendência é que ela tenda a diminuir com o tempo, de maneira acentuada ou não;
+* Quanto maior a autocorrelação (mais próxima de $1$ em módulo), maior a dependência temporal da série;
+* Autocorrelações fora da linha tracejada azul podem ser consideradas significativas, enquanto autocorrelações dentro desse intervalo são consideradas irrelevantes.
+
+Outros termos e definições importantes serão acrescentados de acordo com o andamento da escrita deste material, mas até o momento, o que foi apresentado se trata de uma introdução às Séries Temporais, as principais abordagens e métodos descritivos que nos auxiliam na **análise descritiva** da série em estudo, bem como aplicações em linguagem R. A próxima seção terá como objetivo um maior aprofundamento sobre os componentes de uma série temporal: a Tendência e a Sazonalidade.
