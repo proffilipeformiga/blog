@@ -270,3 +270,39 @@ O gráfico acima representa a função de autocorrelação da série `livestock`
 * Autocorrelações fora da linha tracejada azul podem ser consideradas significativas, enquanto autocorrelações dentro desse intervalo são consideradas irrelevantes.
 
 Outros termos e definições importantes serão acrescentados de acordo com o andamento da escrita deste material, mas até o momento, o que foi apresentado se trata de uma introdução às Séries Temporais, as principais abordagens e métodos descritivos que nos auxiliam na **análise descritiva** da série em estudo, bem como aplicações em linguagem R. A próxima seção terá como objetivo um maior aprofundamento sobre os componentes de uma série temporal: a Tendência e a Sazonalidade.
+
+# Modelos de Box-Jenkins
+
+## Conceitos básicos e notação
+
+A modelagem de Box-Jenkins, também conhecidos como modelos ARIMA, faz parte do grupo de metodologias que consistem na construção de **modelos probabilísticos**, e se baseiam fundamentalmente na análise das **autocorrelações** da série em estudo. Como já mostrado anteriormente, cada variável composta pelas observações $Z_1, ...,Z_N$, sendo $N$ o tamanho da série, será a realização de um processo estocástico.
+
+Sendo assim, nossa principal tarefa ao aprender esses modelos será **identificar e caracterizar** o(s) processo(s) estocástico(s) que gera(m) a série em estudo.
+
+![Figura 3: Filtro linear.](filtro.png)
+
+A Figura 3 ilustra o procedimento geral para a ``geração'' da nossa série $Z_t$ em estudo. O filtro linear geral $\psi(B)$ é aplicado ao ruído aleatório, produzindo a série em estudo. Deste modo, cabe ao pesquisador identificar esse filtro linear. Sobre esse processo, vale ressaltar que:
+
+* pode existir **mais de um processo** $\psi(B)$, da classe ARIMA, capaz de descrever a série em estudo $Z_t$;
+* em geral, os modelos ARIMA são parcimoniosos;
+* o conhecimento desses processos exigem do pesquisador um conhecimento acima da média, além do mero conhecimento sobre pacotes computacionais.
+
+Traduzindo a Figura 3, vamos considerar que os modelos vistos nessa seção são casos particulares de um **modelo de filtro linear**. Isso significa que a série $Z_t$ será gerada por um sistema linear em que a entrada é um ruído branco $a_t$, já descrito anteriormente.
+
+Assim, temos que:
+
+$$Z_t = \mu + a_t + \psi_1 a_{t-1} + \psi_2 a_{t-2} + \psi_3 a_{t-3} + ...$$
+
+Considerando o operador de defasagem $a_{t-k} = B^k a_t$, podemos escrever o modelo como segue:
+
+$$Z_t = \mu + a_t + \psi_1 Ba_t + \psi_2 B^2a_t + \psi_3 B^3a_t + ...$$
+Sendo assim:
+
+$$Z_t = \mu + (1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)a_t$$
+
+
+
+Chamamos a expressão $(1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)$ de $\psi(B)$, que por sua vez é conhecida como **polinômio característico** de $Z_t$. Logo, o modelo pode ser escrito como segue:
+
+$$Z_t = \mu + \psi(B)a_t$$
+A esperança e variância generalizadas de $Z_t$ podem ser demonstradas matematicamente.

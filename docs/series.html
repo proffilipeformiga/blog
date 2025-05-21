@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-03-18"/>
-  <meta property="article:created" itemprop="dateCreated" content="2025-03-18"/>
+  <meta property="article:published" itemprop="datePublished" content="2025-05-21"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-05-21"/>
   <meta name="article:author" content="Filipe Formiga"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Séries Temporais"]},{"type":"character","attributes":{},"value":["<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Filipe Formiga"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["2025-03-18"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Séries Temporais"]},{"type":"character","attributes":{},"value":["<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Filipe Formiga"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["2025-05-21"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2538,7 +2538,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Séries Temporais","description":"<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>","authors":[{"author":"Filipe Formiga","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-03-18T00:00:00.000-03:00","citationText":"Formiga, 2025"}
+{"title":"Séries Temporais","description":"<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>","authors":[{"author":"Filipe Formiga","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-05-21T00:00:00.000-03:00","citationText":"Formiga, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2580,7 +2580,7 @@ Estatística
 <div class="d-byline">
   Filipe Formiga <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> 
   
-<br/>2025-03-18
+<br/>2025-05-21
 </div>
 
 <div class="d-article">
@@ -2599,6 +2599,10 @@ Estatística
 <li><a href="#objetivos-e-motivação" id="toc-objetivos-e-motivação">Objetivos e motivação</a></li>
 <li><a href="#abordagens-de-uma-série-temporal" id="toc-abordagens-de-uma-série-temporal">Abordagens de uma série temporal</a></li>
 <li><a href="#autocorrelação-e-defasagem" id="toc-autocorrelação-e-defasagem">Autocorrelação e defasagem</a></li>
+</ul></li>
+<li><a href="#modelos-de-box-jenkins" id="toc-modelos-de-box-jenkins">Modelos de Box-Jenkins</a>
+<ul>
+<li><a href="#conceitos-básicos-e-notação-1" id="toc-conceitos-básicos-e-notação-1">Conceitos básicos e notação</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2839,6 +2843,30 @@ Frequency = 1
 <li>Autocorrelações fora da linha tracejada azul podem ser consideradas significativas, enquanto autocorrelações dentro desse intervalo são consideradas irrelevantes.</li>
 </ul>
 <p>Outros termos e definições importantes serão acrescentados de acordo com o andamento da escrita deste material, mas até o momento, o que foi apresentado se trata de uma introdução às Séries Temporais, as principais abordagens e métodos descritivos que nos auxiliam na <strong>análise descritiva</strong> da série em estudo, bem como aplicações em linguagem R. A próxima seção terá como objetivo um maior aprofundamento sobre os componentes de uma série temporal: a Tendência e a Sazonalidade.</p>
+<h1 id="modelos-de-box-jenkins">Modelos de Box-Jenkins</h1>
+<h2 id="conceitos-básicos-e-notação-1">Conceitos básicos e notação</h2>
+<p>A modelagem de Box-Jenkins, também conhecidos como modelos ARIMA, faz parte do grupo de metodologias que consistem na construção de <strong>modelos probabilísticos</strong>, e se baseiam fundamentalmente na análise das <strong>autocorrelações</strong> da série em estudo. Como já mostrado anteriormente, cada variável composta pelas observações <span class="math inline">\(Z_1, ...,Z_N\)</span>, sendo <span class="math inline">\(N\)</span> o tamanho da série, será a realização de um processo estocástico.</p>
+<p>Sendo assim, nossa principal tarefa ao aprender esses modelos será <strong>identificar e caracterizar</strong> o(s) processo(s) estocástico(s) que gera(m) a série em estudo.</p>
+<figure>
+<img src="filtro.png" alt="Figura 3: Filtro linear." />
+<figcaption aria-hidden="true">Figura 3: Filtro linear.</figcaption>
+</figure>
+<p>A Figura 3 ilustra o procedimento geral para a ``geração’’ da nossa série <span class="math inline">\(Z_t\)</span> em estudo. O filtro linear geral <span class="math inline">\(\psi(B)\)</span> é aplicado ao ruído aleatório, produzindo a série em estudo. Deste modo, cabe ao pesquisador identificar esse filtro linear. Sobre esse processo, vale ressaltar que:</p>
+<ul>
+<li>pode existir <strong>mais de um processo</strong> <span class="math inline">\(\psi(B)\)</span>, da classe ARIMA, capaz de descrever a série em estudo <span class="math inline">\(Z_t\)</span>;</li>
+<li>em geral, os modelos ARIMA são parcimoniosos;</li>
+<li>o conhecimento desses processos exigem do pesquisador um conhecimento acima da média, além do mero conhecimento sobre pacotes computacionais.</li>
+</ul>
+<p>Traduzindo a Figura 3, vamos considerar que os modelos vistos nessa seção são casos particulares de um <strong>modelo de filtro linear</strong>. Isso significa que a série <span class="math inline">\(Z_t\)</span> será gerada por um sistema linear em que a entrada é um ruído branco <span class="math inline">\(a_t\)</span>, já descrito anteriormente.</p>
+<p>Assim, temos que:</p>
+<p><span class="math display">\[Z_t = \mu + a_t + \psi_1 a_{t-1} + \psi_2 a_{t-2} + \psi_3 a_{t-3} + ...\]</span></p>
+<p>Considerando o operador de defasagem <span class="math inline">\(a_{t-k} = B^k a_t\)</span>, podemos escrever o modelo como segue:</p>
+<p><span class="math display">\[Z_t = \mu + a_t + \psi_1 Ba_t + \psi_2 B^2a_t + \psi_3 B^3a_t + ...\]</span>
+Sendo assim:</p>
+<p><span class="math display">\[Z_t = \mu + (1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)a_t\]</span></p>
+<p>Chamamos a expressão <span class="math inline">\((1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)\)</span> de <span class="math inline">\(\psi(B)\)</span>, que por sua vez é conhecida como <strong>polinômio característico</strong> de <span class="math inline">\(Z_t\)</span>. Logo, o modelo pode ser escrito como segue:</p>
+<p><span class="math display">\[Z_t = \mu + \psi(B)a_t\]</span>
+A esperança e variância generalizadas de <span class="math inline">\(Z_t\)</span> podem ser demonstradas matematicamente.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
