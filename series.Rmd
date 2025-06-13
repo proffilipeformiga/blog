@@ -299,10 +299,34 @@ $$Z_t = \mu + a_t + \psi_1 Ba_t + \psi_2 B^2a_t + \psi_3 B^3a_t + ...$$
 Sendo assim:
 
 $$Z_t = \mu + (1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)a_t$$
-
-
-
 Chamamos a expressão $(1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)$ de $\psi(B)$, que por sua vez é conhecida como **polinômio característico** de $Z_t$. Logo, o modelo pode ser escrito como segue:
 
 $$Z_t = \mu + \psi(B)a_t$$
 A esperança e variância generalizadas de $Z_t$ podem ser demonstradas matematicamente.
+
+Dentro do modelo de filtro linear representado anteriormente, existem diversos processos estocásticos que podem ser utilizados para descrever a série $Z_t$ em estudo, e o trabalho do estatístico/pesquisador consiste basicamente em: i. identificar o processo; ii. após a identificação, estimar os parâmetros que compõe o modelo; e iii. diagnosticar o(s) modelo (s) através da análise de resíduos. Aqui, vale que é possível (e provável) que exista mais de um processo capaz de descrever a série $Z_t$. Sendo assim, o primeiro passo consiste em conhecer os principais modelos que fazem parte da metodologia de Box-Jenkins. Vamos dividir nosso estudo da seguinte maneira:
+
+* **Modelos para séries localmente constantes:**
+  * Auto-regressivos - $AR(p)$
+  * Médias móveis - $MA(q)$
+  * Auto-regressivos e de médias móveis - $ARMA(p,q)$
+* **Modelos para séries com tendência:**
+  * Auto-regressivos Integrados de Médias Móveis - $ARIMA(p,d,q)$
+* **Modelos para séries com sazonalidade:**
+  * Auto-regressivos Sazonais - $SAR(P)$
+  * Médias Móveis de Sazonais - $SMA(Q)$
+  * Auto-regressivos e de Médias Móveis Sazonais- $SARMA(P,Q)$
+* **Modelos para séries com tendência e sazonalidade:**
+  * Auto-regressivos Integrados de Médias Móveis Sazonais - $ARIMA(p,d,q)(P,D,Q)_s$
+
+Esses modelos serão explorados em termos de conceitos, esperança, funções de autocovariância, autocorrelação e autocorrelação parcial. Mas, inicialmente, é interessante apresentarmos o processo estocástico que representa o ruído de cada modelo, chamado de **ruído branco**.
+
+## Ruído Branco
+
+## Modelos Auto-Regressivos
+
+## Modelos de Médias Móveis
+
+## Modelos Auto-regressivos e de Médias Móveis
+
+## Modelos Auto-regressivos Integrados de Médias Móveis

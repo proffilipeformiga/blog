@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-05-21"/>
-  <meta property="article:created" itemprop="dateCreated" content="2025-05-21"/>
+  <meta property="article:published" itemprop="datePublished" content="2025-06-13"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-06-13"/>
   <meta name="article:author" content="Filipe Formiga"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Séries Temporais"]},{"type":"character","attributes":{},"value":["<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Filipe Formiga"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["2025-05-21"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Séries Temporais"]},{"type":"character","attributes":{},"value":["<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Filipe Formiga"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["2025-06-13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2538,7 +2538,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Séries Temporais","description":"<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>","authors":[{"author":"Filipe Formiga","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-05-21T00:00:00.000-03:00","citationText":"Formiga, 2025"}
+{"title":"Séries Temporais","description":"<span style=\"font-size: 18px; color: #05192d;\">Teoria e prática (em R) o conteúdo de Séries Temporais.<\/span>","authors":[{"author":"Filipe Formiga","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-06-13T00:00:00.000-03:00","citationText":"Formiga, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2580,7 +2580,7 @@ Estatística
 <div class="d-byline">
   Filipe Formiga <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> 
   
-<br/>2025-05-21
+<br/>2025-06-13
 </div>
 
 <div class="d-article">
@@ -2603,6 +2603,11 @@ Estatística
 <li><a href="#modelos-de-box-jenkins" id="toc-modelos-de-box-jenkins">Modelos de Box-Jenkins</a>
 <ul>
 <li><a href="#conceitos-básicos-e-notação-1" id="toc-conceitos-básicos-e-notação-1">Conceitos básicos e notação</a></li>
+<li><a href="#ruído-branco" id="toc-ruído-branco">Ruído Branco</a></li>
+<li><a href="#modelos-auto-regressivos" id="toc-modelos-auto-regressivos">Modelos Auto-Regressivos</a></li>
+<li><a href="#modelos-de-médias-móveis" id="toc-modelos-de-médias-móveis">Modelos de Médias Móveis</a></li>
+<li><a href="#modelos-auto-regressivos-e-de-médias-móveis" id="toc-modelos-auto-regressivos-e-de-médias-móveis">Modelos Auto-regressivos e de Médias Móveis</a></li>
+<li><a href="#modelos-auto-regressivos-integrados-de-médias-móveis" id="toc-modelos-auto-regressivos-integrados-de-médias-móveis">Modelos Auto-regressivos Integrados de Médias Móveis</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2863,10 +2868,39 @@ Frequency = 1
 <p>Considerando o operador de defasagem <span class="math inline">\(a_{t-k} = B^k a_t\)</span>, podemos escrever o modelo como segue:</p>
 <p><span class="math display">\[Z_t = \mu + a_t + \psi_1 Ba_t + \psi_2 B^2a_t + \psi_3 B^3a_t + ...\]</span>
 Sendo assim:</p>
-<p><span class="math display">\[Z_t = \mu + (1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)a_t\]</span></p>
-<p>Chamamos a expressão <span class="math inline">\((1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)\)</span> de <span class="math inline">\(\psi(B)\)</span>, que por sua vez é conhecida como <strong>polinômio característico</strong> de <span class="math inline">\(Z_t\)</span>. Logo, o modelo pode ser escrito como segue:</p>
+<p><span class="math display">\[Z_t = \mu + (1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)a_t\]</span>
+Chamamos a expressão <span class="math inline">\((1 + \psi_1B + \psi_2B^2 + \psi_3B^3 + ...)\)</span> de <span class="math inline">\(\psi(B)\)</span>, que por sua vez é conhecida como <strong>polinômio característico</strong> de <span class="math inline">\(Z_t\)</span>. Logo, o modelo pode ser escrito como segue:</p>
 <p><span class="math display">\[Z_t = \mu + \psi(B)a_t\]</span>
 A esperança e variância generalizadas de <span class="math inline">\(Z_t\)</span> podem ser demonstradas matematicamente.</p>
+<p>Dentro do modelo de filtro linear representado anteriormente, existem diversos processos estocásticos que podem ser utilizados para descrever a série <span class="math inline">\(Z_t\)</span> em estudo, e o trabalho do estatístico/pesquisador consiste basicamente em: i. identificar o processo; ii. após a identificação, estimar os parâmetros que compõe o modelo; e iii. diagnosticar o(s) modelo (s) através da análise de resíduos. Aqui, vale que é possível (e provável) que exista mais de um processo capaz de descrever a série <span class="math inline">\(Z_t\)</span>. Sendo assim, o primeiro passo consiste em conhecer os principais modelos que fazem parte da metodologia de Box-Jenkins. Vamos dividir nosso estudo da seguinte maneira:</p>
+<ul>
+<li><strong>Modelos para séries localmente constantes:</strong>
+<ul>
+<li>Auto-regressivos - <span class="math inline">\(AR(p)\)</span></li>
+<li>Médias móveis - <span class="math inline">\(MA(q)\)</span></li>
+<li>Auto-regressivos e de médias móveis - <span class="math inline">\(ARMA(p,q)\)</span></li>
+</ul></li>
+<li><strong>Modelos para séries com tendência:</strong>
+<ul>
+<li>Auto-regressivos Integrados de Médias Móveis - <span class="math inline">\(ARIMA(p,d,q)\)</span></li>
+</ul></li>
+<li><strong>Modelos para séries com sazonalidade:</strong>
+<ul>
+<li>Auto-regressivos Sazonais - <span class="math inline">\(SAR(P)\)</span></li>
+<li>Médias Móveis de Sazonais - <span class="math inline">\(SMA(Q)\)</span></li>
+<li>Auto-regressivos e de Médias Móveis Sazonais- <span class="math inline">\(SARMA(P,Q)\)</span></li>
+</ul></li>
+<li><strong>Modelos para séries com tendência e sazonalidade:</strong>
+<ul>
+<li>Auto-regressivos Integrados de Médias Móveis Sazonais - <span class="math inline">\(ARIMA(p,d,q)(P,D,Q)_s\)</span></li>
+</ul></li>
+</ul>
+<p>Esses modelos serão explorados em termos de conceitos, esperança, funções de autocovariância, autocorrelação e autocorrelação parcial. Mas, inicialmente, é interessante apresentarmos o processo estocástico que representa o ruído de cada modelo, chamado de <strong>ruído branco</strong>.</p>
+<h2 id="ruído-branco">Ruído Branco</h2>
+<h2 id="modelos-auto-regressivos">Modelos Auto-Regressivos</h2>
+<h2 id="modelos-de-médias-móveis">Modelos de Médias Móveis</h2>
+<h2 id="modelos-auto-regressivos-e-de-médias-móveis">Modelos Auto-regressivos e de Médias Móveis</h2>
+<h2 id="modelos-auto-regressivos-integrados-de-médias-móveis">Modelos Auto-regressivos Integrados de Médias Móveis</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
